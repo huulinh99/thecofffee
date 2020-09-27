@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100&display=swap');
+.Navbar{
+    background: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 60px;
+    width: 100%;
+}
+.SubMenu{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.Navbar :hover{
+    color: green;
+}

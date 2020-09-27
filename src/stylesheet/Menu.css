@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@100&display=swap');
+.section-heading{
+    padding-top: 100px;
+    padding-left: 8%;
+    float: left;
+    font-weight:700;
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-size: 42px;
+    font-family: 'BebasNeue','Roboto', "Times New Roman", serif; 
+}
+
+.buy{
+    font-size: 16px;
+    font-weight: 400;
+    color:white;
+    background-color: #EA8025;
+    font-family: 'Bebas Neue','Lato', "Times New Roman", serif;
+    border: 2px solid #EA8025;
+    padding-top: 5px;
+    padding-bottom: 27px;
+    margin: 0 auto;
+    display: table-cell;
+    margin-right: -90px;
+    float: left;
+    vertical-align: middle;
+}
+
+.buy:hover{
+    background: transparent;
+    color: #EA8025;
+    border-color: #EA8025;
+}
+
+.more{
+    font-size: 16px;
+    font-weight: 400;    
+    color:#EA8025;
+    background-color: white;
+    font-family: 'Bebas Neue','Lato', "Times New Roman", serif;
+    border: 2px solid #EA8025;
+    padding-top: 5px;
+    padding-bottom: 27px;
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.more:hover{
+    background: #EA8025;
+    color: white;
+    border: none;
+}
+.section-heading:after {
+    content: '';
+    height: 4px;
+    background: #191919;
+    width: 50%;
+    display: block;
+}
+
+.ant-card-body{
+    padding-left: 0px;
+}
+.col{
+    margin-right: -20px;
+}
+.menu{
+    margin-top: 25px;
+    width: 100%;
+    padding-left: 8%;
+}
