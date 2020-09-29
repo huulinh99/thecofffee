@@ -16,7 +16,7 @@ class Blog extends React.Component{
                         <p className='short-desc'>
                             Thời gian trôi qua, mỗi năm một khác, câu chuyện Trung Thu cũng vì thế mà khó được trọn vẹn như xưa, đặc biệt trong những ngày nhiều biến động,...
                         </p>
-                        <Button  size='300px' className="buy" style={{height: '45px', marginLeft: '2%'}}>
+                        <Button  size='300px' className="see-more-desc" style={{height: '37px', marginLeft: '2%'}}>
                             XEM THÊM
                         </Button>                                 
                     </div>
@@ -32,6 +32,9 @@ class Blog extends React.Component{
                                 <p style={{marginBottom:'10px',lineHeight:'24px',fontFamily:'Lato',color: '#000000', float:'left', width: '100%',textAlign:'left', fontSize:'14px',marginLeft:'4.6%',paddingRight:'5.2%'}}>
                                     Cùng Nhà khám phá Gói Tiết Kiệm "phiên bản nâng cấp" tại app The Coffee House để thưởng thức món yêu thích và tiết kiệm đến 160.000đ nha!Nhà hiểu rằng, một ngày...
                                 </p>
+                                <Button  size='400px' className="see-more">
+                                    XEM THÊM
+                                </Button>  
                             </div>                                                                                                                                 
                         </Card>
                     </Col>
@@ -45,6 +48,9 @@ class Blog extends React.Component{
                                 <p style={{marginBottom:'10px',lineHeight:'24px',fontFamily:'Lato',color: '#000000', float:'left', width: '100%',textAlign:'left', fontSize:'14px',marginLeft:'4.6%',paddingRight:'5.2%'}}>
                                     Không khí Trung Thu đã tràn ngập không gian Nhà. Hãy cùng Nhà khám phá cuộc phiêu lưu của chú Cuội phiên bản "xịn sò", đắm chìm trong sắc màu...
                                 </p>
+                                <Button  size='400px' className="see-more">
+                                    XEM THÊM
+                                </Button> 
                             </div>                   
                         </Card>
                     </Col>
@@ -58,6 +64,9 @@ class Blog extends React.Component{
                                 <p style={{marginBottom:'10px',lineHeight:'24px',fontFamily:'Lato',color: '#000000', float:'left', width: '100%',textAlign:'left', fontSize:'14px',marginLeft:'4.6%',paddingRight:'5.2%'}}>
                                     Sáng tạo là niềm đam mê Barista tại The Coffee House luôn theo đuổi. Mùa trăng tròn này, Nhà gửi đến bạn bộ sưu tập thức uống sáng tạo -...
                                 </p>
+                                <Button  size='400px' className="see-more">
+                                    XEM THÊM
+                                </Button> 
                             </div> 
                         </Card>
                     </Col>

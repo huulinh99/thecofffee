@@ -84,3 +84,46 @@
     font-size: 16px;
     font-family: 'Lato', "Times New Roman", serif;
 }
+
+.see-more{
+    font-size: 16px;
+    font-weight: 400;    
+    top: 270%;
+    right: 40%;
+    color:white;
+    background-color: #EA8025;
+    font-family: 'Bebas Neue','Lato', "Times New Roman", serif;
+    border: 2px solid #EA8025;
+    padding-top: 5px;
+    padding-bottom: 27px;
+    margin: 0 auto;
+    display: table-cell;
+}
+
+.see-more:hover{
+    background: transparent;
+    color: #EA8025;
+    border-color: #EA8025;
+}
+
+.see-more-desc{
+    font-size: 16px;
+    font-weight: 400;
+    color:white;
+    background-color: #EA8025;
+    font-family: 'Bebas Neue','Lato', "Times New Roman", serif;
+    border: 2px solid #EA8025;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    display: table-cell;
+    margin-right: -90px;
+    float: left;
+    vertical-align: middle;
+}
+
+.see-more-desc:hover{
+    background: transparent;
+    color: #EA8025;
+    border-color: #EA8025;
+}
