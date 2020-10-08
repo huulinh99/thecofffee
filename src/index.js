@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
-import AboutCoffee from './pages/AboutCoffee';
+import App from './App';
+import Order from './pages/Order';
+import Product from './pages/Product';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AboutCoffee />
+    <Product />
   </React.StrictMode>,
   document.getElementById('root')
 );

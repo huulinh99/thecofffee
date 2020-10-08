@@ -1,0 +1,5 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&display=swap');
+.product-for-order{
+    background: #f0f2f5;
+}

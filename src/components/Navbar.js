@@ -1,8 +1,11 @@
 import React from 'react';
 import { Menu } from 'antd';
-import '../stylesheet/Navbar.css'
+import { BrowserRouter, Route } from 'react-router-dom';
 
-const { SubMenu } = Menu;
+import '../stylesheet/Navbar.css'
+//import AboutCoffee from '../pages/AboutCoffee';
+//import Product from '../pages/Product';
+
 
 class Navbar extends React.Component {
   state = {
@@ -17,21 +20,16 @@ class Navbar extends React.Component {
   render() {
     const { current } = this.state;
     return (
+      <BrowserRouter>
       <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" className="Navbar">
-        <SubMenu key="story" title="câu chuyện thương hiệu" className="SubMenu">
-            <Menu.Item key="story:1">VỀ THE COFFEE HOUSE</Menu.Item>
-            <Menu.Item key="story:2">TRÁCH NHIỆM CỘNG ĐỒNG</Menu.Item>
-            <Menu.Item key="story:3">THÔNG CÁO BÁO CHÍ</Menu.Item>
-        </SubMenu>
-        <SubMenu key="coffestory"  title="CHUYỆN CÀ PHÊ" className="SubMenu">
-            <Menu.Item key="coffestory:1">HÀNH TRÌNH TỪ NÔNG TRẠI ĐẾN LY CÀ PHÊ</Menu.Item>
-            <Menu.Item key="coffestory:2">HẠT CÀ PHÊ THE COFFEE HOUSE</Menu.Item>
-            <Menu.Item key="coffestory:3">NGHỆ THUẬT PHA CHẾ</Menu.Item>
-            <Menu.Item key="coffestory:4">WORKSHOP COFFEE</Menu.Item>
-            <Menu.Item key="coffestory:5">TRUY XUẤT NGUỒN GỐC</Menu.Item>
-        </SubMenu>
-        <Menu.Item key="product" className="SubMenu" style={{textTransform:'uppercase'}}>
-          sản phẩm
+        <Menu.Item key="story" className="SubMenu">
+            <a href="/Home" style={{color:'white'}}>CÂU CHUYỆN THƯƠNG HIỆU</a>
+        </Menu.Item>
+        <Menu.Item key="coffestory" className="SubMenu">
+            <a href="/AboutCoffee" style={{color:'white'}}>CHUYỆN CÀ PHÊ</a>
+        </Menu.Item>
+        <Menu.Item key="product1" className="SubMenu">
+            <a href="/Product" style={{color:'white'}}>SẢN PHẨM</a>
         </Menu.Item>
         <Menu.Item key="endow" className="SubMenu">
           ƯU ĐÃI THÀNH VIÊN
@@ -46,6 +44,7 @@ class Navbar extends React.Component {
           CỬA HÀNG
         </Menu.Item>        
       </Menu>
+      </BrowserRouter>
     );
   }
 }

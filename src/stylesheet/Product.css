@@ -1,0 +1,26 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&display=swap');
+.product-background{
+    background: url(http://file.hstatic.net/1000075078/file/slider_home_1_d1b6c140bb55445ea05ce4be5ed38513_master.jpg);
+    position: relative;
+    margin-top: 45px;
+    height: 345px;
+    overflow: hidden;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.ant-layout-sider{
+    flex: 0 0 300px !important;
+    max-width: 300px !important; 
+    min-width: 300px !important;
+    width: 300px !important;
+    background: white;
+}
+.collection-menu-wrap{
+    background: #f0f2f5;
+}
