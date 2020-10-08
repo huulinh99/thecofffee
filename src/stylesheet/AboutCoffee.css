@@ -3,6 +3,7 @@
 .brand-story{
     background: url(http://file.hstatic.net/1000075078/file/instagram_bg.png) no-repeat right bottom;
     padding: 230px 0;
+    background-position: top right;
     max-height: 80%;
 }
 .brand-story{
@@ -25,10 +26,44 @@
     margin: 0 auto;
     text-align: center;
     font-size: 16px;
+    margin-bottom: 10%;
     line-height: 30px;
 }
 
-.block-brand-story-title{
-  
+.block-brand-story-title:after{
+    content: '';
+    height: 4px;
+    margin: -5px auto;
+    background: #191919;
+    width: 19%;
+    display: block;
 }
 
+.brand-story-image{
+    border: none;
+    max-width: 100%;
+    height: auto;
+}
+
+.block-brand-story-row-content{
+    color: #000000;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Bebas Neue','Lato', "Times New Roman", serif;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.brand-story-image-2{
+    margin-left: -40%;
+    border: none;
+    max-width: 115%;
+    height: auto;
+}
+
+.brand-story-image-3{
+    margin-left: 16%;
+    border: none;
+    max-width: 108%;
+    height: auto;
+}

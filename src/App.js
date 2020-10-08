@@ -1,18 +1,19 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
-import SlideShow from './slideshow/SlideShow';
-import Menu from './components/Menu';
-import Blog from './components/Blog';
+import Home from './pages/Home';
+import { BrowserRouter, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import AboutCoffee from './pages/AboutCoffee';
 
 function App() {
-  return (
-    <div className="App">
-        <Navbar/>
-        <SlideShow/>      
-        <Menu/>
-        <Blog/>
-    </div>
+  return (   
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />   
+        <Route path='/Home' component={Home}/>  
+        <Route path='/AboutCoffee' component={AboutCoffee}/>  
+      </div>
+    </BrowserRouter>     
   );
 }
 
