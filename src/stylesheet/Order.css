@@ -3,3 +3,27 @@
 .product-for-order{
     background: #f0f2f5;
 }
+.uk-position-bottom-right {
+    bottom: 0;
+    cursor: pointer;
+    right: 0;
+}
+
+.uk-text-primary {
+    color: #ea8025 !important;
+}
+
+.uk-icon {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    padding: 0;
+    background-color: transparent;
+    display: inline-block;
+    fill: currentcolor;
+    line-height: 0;
+}

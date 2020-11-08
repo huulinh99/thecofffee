@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:regular,bold,italic&subset=latin,latin-ext');
 .Navbar{
     background: #000000;
     position: fixed;
@@ -14,7 +14,7 @@
     font-size: 18px;
     line-height: 22px;
     font-weight: 700;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Bebas Neue', cursive !important;
 }
 
 .Navbar :hover{

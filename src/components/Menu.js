@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Col, Row } from 'antd';
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter,Link} from "react-router-dom";
 import { Button } from 'antd';
 import '../stylesheet/Menu.css'
 
@@ -42,14 +42,16 @@ class Menu extends React.Component {
                                         style={{ width: 360 }}
                                         cover={<img alt={product.description} src={product.photo} />}>                               
                                         <BrowserRouter>
-                                            <h3 to="/" className="product-name">{product.productNm}</h3>
+                                            <h3 to="/" className="product-name" style={{marginLeft:'10px'}}>{product.productNm}</h3>
                                         </BrowserRouter>                                     
-                                        <div className="product-price">{product.price} Đ</div>
-                                            <Button  size='400px' className="buy" style={{marginTop:'15px'}}>
-                                                MUA NGAY
+                                        <div className="product-price" style={{marginLeft:'10px'}}>{product.price} Đ</div>
+                                            <Button  size='400px' className="buy" style={{marginTop:'15px', marginLeft:'10px'}}>
+                                                <Link to='/Order' target='_blank'>
+                                                    buy now
+                                                </Link>
                                             </Button>    
                                             <Button  size='400px' className="more" style={{marginTop:'15px'}}>
-                                                TÌM HIỂU THÊM
+                                                SEE MORE
                                             </Button>                                              
                                     </Card>
                                 </Col>                            
