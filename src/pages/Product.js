@@ -96,20 +96,18 @@ class Product extends React.Component {
                                         style={{ width: 290 }}
                                         cover={<img alt={productEachCategory.description} src={productEachCategory.photo} />}>                               
                                         <BrowserRouter>
-                                            <h3 to="/" className="product-name">{productEachCategory.productNm}</h3>
+                                            <h3 to="/" className="product-name" style={{marginLeft:'10px'}}>{productEachCategory.productNm}</h3>
                                         </BrowserRouter>                                     
-                                        <div className="product-price">{productEachCategory.price} Đ</div>
-                                        <BrowserRouter>
-                                        
-                                            <Button  size='400px' className="buy" style={{marginTop:'15px'}}>
-                                            <Link to='/AboutCoffee' target='_blank'>
-                                                MUA NGAY
-                                                </Link>
-                                            </Button>
-                                        
+                                        <div className="product-price" style={{marginLeft:'10px'}}>{productEachCategory.price} Đ</div>
+                                        <BrowserRouter>                                      
+                                            <Button  size='400px' className="buy" style={{marginTop:'15px', marginRight:'10px', marginLeft:'10px'}}>
+                                            <Link to='/Order' target='_blank'>
+                                                buy now
+                                            </Link>
+                                            </Button>                
                                         </BrowserRouter>                                                                                      
                                             <Button  size='400px' className="more" style={{marginTop:'15px'}}>
-                                                TÌM HIỂU THÊM
+                                                see more
                                             </Button>                                              
                                     </Card>
                                 </Col>                            

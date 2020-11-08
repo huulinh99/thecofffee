@@ -4,11 +4,17 @@ import './index.css';
 import App from './App';
 import Order from './pages/Order';
 import Product from './pages/Product';
+import Home from './pages/Home';
+import AboutCoffee from './pages/AboutCoffee';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Product />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

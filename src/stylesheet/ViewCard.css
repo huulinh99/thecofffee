@@ -1,0 +1,20 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&display=swap');
+.payment{
+    background: #f0f2f5;
+}
+.uk-card-title{
+    color: #191919;
+    font-size: 1.5rem;
+    margin-left: -450px;
+    line-height: 1.4;
+}
+
+.uk-card-title:after{
+    content: '';
+    height: 0.5px;
+    margin-top: 20px;
+    background: #191919;
+    width: 100%;
+    display: block;
+}
