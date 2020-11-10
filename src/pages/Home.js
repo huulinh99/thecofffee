@@ -5,12 +5,12 @@ import SlideShow from '../slideshow/SlideShow';
 import Menu from '../components/Menu';
 import Blog from '../components/Blog'
 
-function Home() {
+function Home(props) {
   return (   
       <div className="Home">
         <Navbar/>     
         <SlideShow/>      
-        <Menu/>
+        <Menu {...props}/>
         <Blog/>
       </div>
   );
