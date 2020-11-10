@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import AboutCoffee from './pages/AboutCoffee';
+import News from './pages/News';
 import Product from './pages/Product';
 import Order from './pages/Order';
 import ViewCard from './pages/ViewCard';
