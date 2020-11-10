@@ -7,7 +7,7 @@
     margin-bottom: 30px;
     margin-top: 0;
     font-size: 42px;
-    font-family: 'BebasNeue','Roboto', "Times New Roman", serif; 
+    font-family: 'Bebas Neue','Roboto', "Times New Roman", serif; 
 }
 
 .buy{
@@ -42,6 +42,7 @@
     padding-top: 5px;
     padding-bottom: 27px;
     margin: 0 auto;
+    margin-left: -60px;
     display: table-cell;
     vertical-align: middle;
 }
@@ -49,7 +50,7 @@
 .more:hover{
     background: #EA8025;
     color: white;
-    border: none;
+    border-color: white;
 }
 .section-heading:after {
     content: '';
@@ -72,11 +73,11 @@
 }
 .product-name{
     margin-top: -5%;
-    font-weight: 700;
+    font-weight: 500;
     color: inherit;
     font-family: 'Bebas Neue','Lato', "Times New Roman", serif;
     text-align:left;
-    font-size:24px; 
+    font-size:20px; 
     width: 100%;
     text-transform: uppercase
 }

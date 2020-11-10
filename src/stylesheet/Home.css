@@ -1,7 +1,8 @@
 @import '~antd/dist/antd.css';
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:regular,bold,italic&subset=latin,latin-ext');
 .Home{
   text-align: center;
   overflow-y: hidden;
+  width: 100%;
 }
 
