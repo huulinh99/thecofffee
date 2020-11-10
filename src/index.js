@@ -4,12 +4,10 @@ import './index.css';
 import App from './App';
 import Order from './pages/Order';
 import Product from './pages/Product';
-import ProductDetail from './pages/ProductDetail';
 import Blog from './components/Blog'
 import News from './pages/News';
 import Home from './pages/Home';
 import AboutCoffee from './pages/AboutCoffee';
-import Login from './pages/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import Popper from 'popper.js';

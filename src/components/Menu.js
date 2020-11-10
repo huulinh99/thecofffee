@@ -1,15 +1,14 @@
 import React from 'react'
 import { Card, Col, Row } from 'antd';
-import {BrowserRouter,Link  } from "react-router-dom";
-import { withRouter, useHistory } from 'react-router';
+import {BrowserRouter,Link} from "react-router-dom";
 import { Button } from 'antd';
 import '../stylesheet/Menu.css'
 
 class Menu extends React.Component {
-    
+
     state ={
         loading: true,
-        products: [],       
+        products: []
     }
 
     async componentDidMount(){
@@ -22,14 +21,6 @@ class Menu extends React.Component {
         })
         console.log(data[0].product);
         console.log("test");
-    }
-
-    showProductDetail(productId){     
-        console.log(this.props);
-        this.props.history.push({
-            pathname: `/products/${productId}`,
-            props: {idForShowDetail: productId}
-        })
     }
 
     render() {
@@ -49,13 +40,13 @@ class Menu extends React.Component {
                                 <Col span={8} style={{paddingLeft:'35px', marginBottom:'30px'}}>
                                     <Card hoverable
                                         style={{ width: 360 }}
-                                        cover={<img alt={product.description} src={product.photo} />} onClick={() => this.showProductDetail(product.productId)}>                               
+                                        cover={<img alt={product.description} src={product.photo} />}>                               
                                         <BrowserRouter>
                                             <h3 to="/" className="product-name" style={{marginLeft:'10px'}}>{product.productNm}</h3>
                                         </BrowserRouter>                                     
                                         <div className="product-price" style={{marginLeft:'10px'}}>{product.price} Đ</div>
                                             <Button  size='400px' className="buy" style={{marginTop:'15px', marginLeft:'10px'}}>
-                                                <Link to='/Order' target='_blank' style={{textDecoration:'none'}}>
+                                                <Link to='/Order' target='_blank'>
                                                     buy now
                                                 </Link>
                                             </Button>    
