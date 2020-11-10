@@ -5,6 +5,8 @@ import App from './App';
 import Order from './pages/Order';
 import Product from './pages/Product';
 import ProductDetail from './pages/ProductDetail';
+import Blog from './components/Blog'
+import News from './pages/News';
 import Home from './pages/Home';
 import AboutCoffee from './pages/AboutCoffee';
 import Login from './pages/Login';
@@ -13,9 +15,17 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import * as serviceWorker from './serviceWorker';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './components/store/reducers/rootReducers';
+
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
+      <News />
+    </Provider>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
