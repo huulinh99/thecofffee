@@ -94,7 +94,7 @@ class Product extends React.Component {
                                 <Col span={8} style={{ marginBottom:'30px',marginLeft:'50px'}}>
                                     <Card hoverable
                                         style={{ width: 290 }}
-                                        cover={<img alt={productEachCategory.description} src={productEachCategory.photo} />} onClick={(productId) => this.productDetail(productId)}>                               
+                                        cover={<img alt={productEachCategory.description} src={productEachCategory.photo} />}>                               
                                         <BrowserRouter>
                                             <h3 to="/" className="product-name" style={{marginLeft:'10px'}}>{productEachCategory.productNm}</h3>
                                         </BrowserRouter>                                     
