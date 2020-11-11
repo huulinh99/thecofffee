@@ -6,17 +6,18 @@
 }
 
 .product-detail-image img{
-    width: 110%;
+    width: 100%;
 }
 .product-detail-description{
-    margin-left: 750px;
+    margin-left: 800px;
     margin-top: -500px;
-    width: 45%;
+    padding-right: -100px;
+    width: 40%;
 }
 .info-product-title{
     font-family: 'Bebas Neue','Lato', "Times New Roman", serif;
-    font-size: 42px;
-    text-align: justify;
+    font-size: 30px;
+    text-align: left;
     margin-left: 100px;
     margin-bottom: 60px;
     width: 45%;

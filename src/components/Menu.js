@@ -28,7 +28,6 @@ class Menu extends React.Component {
         console.log(this.props);
         this.props.history.push({
             pathname: `/products/${productId}`,
-            props: {idForShowDetail: productId}
         })
     }
 

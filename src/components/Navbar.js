@@ -36,9 +36,6 @@ class Navbar extends React.Component {
         <Menu.Item key="product" className="SubMenu">
             <Link to="/Product" style={{color:'white'}}>product</Link>
         </Menu.Item>
-        <Menu.Item key="news" className="SubMenu">
-          news
-        </Menu.Item> 
       </Menu>    
     );
   }

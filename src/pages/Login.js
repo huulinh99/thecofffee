@@ -1,7 +1,11 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../App";
 import firebase from 'firebase'
-import { withRouter } from 'react-router-dom'
+import { GoogleOutlined } from '@ant-design/icons';
+import { Link, Redirect, withRouter } from 'react-router-dom'
+import { Button, Col, Row, Typography } from "antd";
+import '../stylesheet/Login.css';
+import Axios from "axios";
 
 const Login = ({ history }) => {
     const [email, setEmail] = useState("");
@@ -32,6 +36,7 @@ const Login = ({ history }) => {
 
     const signInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
+        var role = '';
         firebase
             .auth()
             .setPersistence(firebase.auth.Auth.Persistence.SESSION)
@@ -40,44 +45,51 @@ const Login = ({ history }) => {
                     .auth()
                     .signInWithPopup(provider)
                     .then(result => {
-                        firebase.auth().currentUser.getIdToken(true).then(function (idToken){
-                            console.log('this idToken', idToken);
+                        firebase.auth().currentUser.getIdToken(true).then(function (idToken) {
+                            Axios.post('https://localhost:44362/api/v1/Auth/Google', {
+                                token: idToken,
+                              })
+                              .then(function (response) {                               
+                                role = response.data.role;                                                         
+                              })
+                              .catch(function (error) {
+                                console.log(error);
+                              });
                         })
-                        Auth.setLoggedIn(true)
+                        //Auth.setLoggedIn(true)
                     })
                     .catch(e => setErrors(e.message))
+                    if(role === "User"){
+                        return <Redirect to="/ViewCard"/>
+                    } 
             })
 
     }
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={e => handleForm(e)}>
-                <input
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    name="email"
-                    type="email"
-                    placeholder="email"
-                />
-                <input
-                    onChange={e => setPassword(e.target.value)}
-                    name="password"
-                    value={password}
-                    type="password"
-                    placeholder="password"
-                />
-                <hr />
-                <button onClick={() => signInWithGoogle()} className="googleBtn" type="button">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                        alt="logo"
-                    />
-          Login With Google
-        </button>
-                <button type="submit">Login</button>
-                <span>{error}</span>
-            </form>
+
+        <div className="container">
+            <div className="header">
+                <Link to="/">
+                    <span className="title">Capstone Scoring System</span>
+                </Link>
+                <div className="desc">Project of SWD301</div>
+            </div>
+            <div className="loginContainer">
+                <div style={{ marginTop: '2rem' }}>
+                    <Typography.Title style={{ color: '#555', marginBottom: '0' }}>Login</Typography.Title>
+                    <p>Sign in to your system</p>
+                    <Row>
+                        <Col>
+                            <Typography.Text strong type="danger">
+                                {error}
+                            </Typography.Text>
+                        </Col>
+                    </Row>
+                    <Button icon={<GoogleOutlined />} onClick={signInWithGoogle} type="primary">
+                        Login with Google
+                        </Button>
+                </div>
+            </div>
         </div>
     );
 };

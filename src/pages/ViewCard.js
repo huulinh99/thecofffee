@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Menu, Modal, Button } from 'antd';
+import { Layout, Menu, Modal, Button, Spin } from 'antd';
 import { Row, Col, Card } from 'antd';
 import { Form, Input, Checkbox } from 'antd';
 import CardOrder from '../components/Card';
@@ -9,38 +9,45 @@ class ViewCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            layout : {
+            layout: {
                 labelCol: {
-                  span: 8,
+                    span: 8,
                 },
                 wrapperCol: {
-                  span: 16,
+                    span: 16,
                 },
-              },
-              tailLayout : {
+            },
+            tailLayout: {
                 wrapperCol: {
-                  offset: 8,
-                  span: 16,
+                    offset: 8,
+                    span: 16,
                 },
-              }
+            },
+            cart: null,
         }
-    }  
+    }
 
-    onFinish(values){
+    onFinish(values) {
         console.log('Success:', values);
-      };
-    
-    onFinishFailed(errorInfo){
+    };
+
+    onFinishFailed(errorInfo) {
         console.log('Failed:', errorInfo);
     };
+
+    componentDidMount() {
+        // get from localStorage
+        const cart = JSON.parse(localStorage.getItem("CART"));
+        this.setState({ cart });
+    }
 
     render() {
         return (
             <div className="payment">
                 <Navbar />
                 <div>
-                    <Row style={{ marginTop: '70px',height:'1000px' }}>
-                        <Col span={15} style={{ backgroundColor: 'white',height: 'fit-content' }}>
+                    <Row style={{ marginTop: '70px', height: '1000px' }}>
+                        <Col span={15} style={{ backgroundColor: 'white', height: 'fit-content' }}>
                             <div>
                                 <p className="uk-card-title">1. Xác nhận thông tin đơn hàng</p>
                             </div>
@@ -50,7 +57,7 @@ class ViewCard extends React.Component {
                                 initialValues={{
                                     remember: true,
                                 }}
-                                style={{marginLeft:'-300px'}}>
+                                style={{ marginLeft: '-300px' }}>
                                 <Form.Item
                                     label="Address"
                                     name="address"
@@ -60,8 +67,8 @@ class ViewCard extends React.Component {
                                             message: 'Please input your address!',
                                         },
                                     ]}
-                               style={{height:'40px'}}>
-                                    <Input style={{height:'40px'}} placeholder="Enter address for shipping"/>
+                                    style={{ height: '40px' }}>
+                                    <Input style={{ height: '40px' }} placeholder="Enter address for shipping" />
                                 </Form.Item>
                                 <Form.Item
                                     label="Name"
@@ -73,8 +80,8 @@ class ViewCard extends React.Component {
                                         },
                                     ]}
                                 >
-                                    <Input style={{width:'40%',marginLeft:'-480px', height:'40px'}} placeholder="Enter your name"/>
-                                    
+                                    <Input style={{ width: '40%', marginLeft: '-480px', height: '40px' }} placeholder="Enter your name" />
+
                                 </Form.Item>
                                 <Form.Item
                                     label="Phone"
@@ -86,24 +93,24 @@ class ViewCard extends React.Component {
                                         },
                                     ]}
                                 >
-                                <Input style={{width:'40%',marginLeft:'-480px', height:'40px'}} placeholder="Enter your phone number"/>                                  
+                                    <Input style={{ width: '40%', marginLeft: '-480px', height: '40px' }} placeholder="Enter your phone number" />
                                 </Form.Item>
                                 <Form.Item
                                     label="Note"
-                                    name="note"                         
-                               style={{height:'40px'}}>
-                                    <Input style={{height:'40px'}} placeholder="Enter address your note"/>
+                                    name="note"
+                                    style={{ height: '40px' }}>
+                                    <Input style={{ height: '40px' }} placeholder="Enter address your note" />
                                 </Form.Item>
 
                                 <Form.Item {...this.state.tailLayout}>
-                                    <Button type="primary" htmlType="submit" style={{margin: '0 auto'}}>
+                                    <Button type="primary" htmlType="submit" style={{ margin: '0 auto' }}>
                                         Submit
                                     </Button>
                                 </Form.Item>
                             </Form>
                         </Col>
-                        <Col span={8} style={{ backgroundColor: 'white', marginLeft: '57px' }}>
-                            
+                        <Col span={8} style={{ backgroundColor: 'white', marginLeft: '57px',display:'flex',height: 'fit-content' }}>
+                            {this.state.cart !== null ? <CardOrder {...this.state.cart} /> : <Spin />}
                         </Col>
                     </Row>
                 </div>

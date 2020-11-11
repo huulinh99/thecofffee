@@ -5,6 +5,7 @@ import { Row, Col, Card } from 'antd';
 import Navbar from '../components/Navbar';
 import CardOrder from '../components/Card';
 
+
 class Order extends React.Component {
 
     constructor(props) {
@@ -16,20 +17,20 @@ class Order extends React.Component {
             products: [],
             productForOrder: [],
             eachProduct: {
-                id:"",
+                id: "",
                 name: "",
                 price: 0,
                 quantity: 0
             },
-            total:0,
-            totalOrder:0,
+            total: 0,
+            totalOrder: 0,
             currentProduct: {},
             quantity: 1,
             price: 0,
         }
-    
+
         this.handleChange = this.handleChange.bind(this);
-    }   
+    }
 
     async componentDidMount() {
         Promise.all([
@@ -41,7 +42,12 @@ class Order extends React.Component {
                 categories: data1,
                 products: data2,
                 loading: false
-            }));
+            })).then(() => {
+                const cart = JSON.parse(localStorage.getItem("CART"));
+                this.setState({ ...cart });
+            });
+
+
     }
 
     setModalVisibleAndProduct(modal1Visible, productDetail) {
@@ -61,26 +67,32 @@ class Order extends React.Component {
     setModal1ForOK(modal1Visible) {
         var found = false;
         this.setState({
-            modal1Visible,          
-        });       
-        if(this.state.productForOrder.length > 0){
+            modal1Visible,
+        });
+        if (this.state.productForOrder.length > 0) {
             var tmp;
-            this.state.productForOrder.map((product, i) => {                    
-                if(product.id == this.state.currentProduct.productId){
-                    product.quantity += this.state.quantity
-                    tmp = product;
-                }
-            })
 
-            if(tmp==undefined){
-                this.state.productForOrder.push({
+            let isExist = this.state.productForOrder.some((prod) => {
+                return prod.id == this.state.currentProduct.productId;
+            });
+
+            const newProductFOrORder = this.state.productForOrder.map((product, i) => {
+                if (product.id == this.state.currentProduct.productId) {
+                    product.quantity += +this.state.quantity
+                }
+                return product;
+            })
+            if (!isExist) {
+                newProductFOrORder.push({
                     id: this.state.currentProduct.productId,
                     name: this.state.currentProduct.productNm,
                     price: this.state.currentProduct.price,
                     quantity: this.state.quantity
                 });
             }
-        }else{
+
+            this.setState({ productForOrder: newProductFOrORder });
+        } else {
             this.state.productForOrder.push({
                 id: this.state.currentProduct.productId,
                 name: this.state.currentProduct.productNm,
@@ -88,15 +100,21 @@ class Order extends React.Component {
                 quantity: this.state.quantity
             });
         }
-                
-        this.state.total+=this.state.currentProduct.price * this.state.quantity;
-        this.state.totalOrder += this.state.quantity
-        console.log(this.state.total);       
+
+        this.state.total += this.state.currentProduct.price * this.state.quantity;
+        this.state.totalOrder += this.state.quantity;
+        this.setState({ quantity: 1 });
+        localStorage.setItem('CART', JSON.stringify({
+            productForOrder: this.state.productForOrder,
+            total: this.state.total,
+            totalOrder: this.state.totalOrder,
+        }));
+        console.log(this.state.total);
     }
 
     handleChange(event) {
         var quantityValue = parseInt(event.target.value);
-        this.setState({quantity: quantityValue});
+        this.setState({ quantity: quantityValue });
     }
 
 
@@ -117,7 +135,7 @@ class Order extends React.Component {
                             <div>
                                 <p style={{ marginLeft: '110px', marginTop: '-75px', fontSize: '16px', fontWeight: 'bold' }}>{this.state.currentProduct.productNm}</p>
                                 <p style={{ marginLeft: '110px', marginTop: '-10px', fontSize: '16px' }}>{this.state.currentProduct.price}</p>
-                                <input type="number" value={this.state.quantity} onChange={this.handleChange} placeholder="Enter quantity" style={{ marginLeft: '110px', marginTop: '-120px' }} />
+                                <input type="number" value={this.state.quantity} onChange={this.handleChange} placeholder="Enter quantity" style={{ marginLeft: '110px', marginTop: '-120px', width:'50%' }} />
                             </div>
                         </div>
                     )}
@@ -140,8 +158,11 @@ class Order extends React.Component {
                         <Col span={11} style={{ marginLeft: '-60px' }}>
                             {this.renderProduct()}
                         </Col>
-                        <Col span={7} style={{ background: 'white', marginLeft: '32px', height: 'fit-content', marginTop: '30px',display:'flex' }}>
-                            <CardOrder totalOrder={this.state.totalOrder} total={this.state.total} productForOrder={this.state.productForOrder} />
+                        <Col span={7} style={{ background: 'white', marginLeft: '32px', height: 'fit-content', marginTop: '30px', display: 'flex' }}>
+                            <CardOrder onClick={(prod) => {
+                                this.setState({ currentProduct: prod });
+                                this.setModalVisibleAndProduct(true, prod)
+                            }} totalOrder={this.state.totalOrder} total={this.state.total} productForOrder={this.state.productForOrder} />
                         </Col>
                     </Row>
                 </div>
