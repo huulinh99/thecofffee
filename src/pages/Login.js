@@ -46,7 +46,7 @@ const Login = ({ history }) => {
                     .signInWithPopup(provider)
                     .then(result => {
                         firebase.auth().currentUser.getIdToken(true).then(function (idToken) {
-                            Axios.post('https://localhost:44362/api/v1/Auth/Google', {
+                            Axios.post('https://coffee-shop-api.azurewebsites.net/api/v1/Auth/Google', {
                                 token: idToken,
                               })
                               .then(function (response) {                               

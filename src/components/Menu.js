@@ -13,7 +13,7 @@ class Menu extends React.Component {
     }
 
     async componentDidMount(){
-        const url = "https://localhost:44362/api/v1/category/9c7a418c-8347-4d77-9611-c7c8b99074e3/products";
+        const url = "https://coffee-shop-api.azurewebsites.net/api/v1/category/9c7a418c-8347-4d77-9611-c7c8b99074e3/products";
         const respone = await fetch(url);
         const data = await respone.json();
         this.setState({
@@ -48,7 +48,7 @@ class Menu extends React.Component {
                                 <Col span={8} style={{paddingLeft:'35px', marginBottom:'30px'}}>
                                     <Card hoverable
                                         style={{ width: 360 }}
-                                        cover={<img alt={product.description} src={product.photo} />} onClick={() => this.showProductDetail(product.productId)}>                               
+                                        cover={<img alt={product.description} src={product.photo} />} >                               
                                         <BrowserRouter>
                                             <h3 to="/" className="product-name" style={{marginLeft:'10px'}}>{product.productNm}</h3>
                                         </BrowserRouter>                                     
@@ -58,7 +58,7 @@ class Menu extends React.Component {
                                                     buy now
                                                 </Link>
                                             </Button>    
-                                            <Button  size='400px' className="more" style={{marginTop:'15px'}}>
+                                            <Button  size='400px' className="more" style={{marginTop:'15px'}} onClick={() => this.showProductDetail(product.productId)}>
                                                 SEE MORE
                                             </Button>                                              
                                     </Card>

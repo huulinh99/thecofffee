@@ -1,9 +1,10 @@
 {
   "name": "prc391_coffe",
   "version": "0.1.0",
-  "homepage":"https://thecoffeeshopprc.herokuapp.com",
+  "homepage": "https://thecoffeeshopprc.herokuapp.com",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.2.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",

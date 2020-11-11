@@ -18,8 +18,8 @@ class Product extends React.Component {
 
     async componentDidMount() {
         Promise.all([
-            fetch('https://localhost:44362/api/v1/category'),
-            fetch('https://localhost:44362/api/v1/category/products')
+            fetch('https://coffee-shop-api.azurewebsites.net/api/v1/category'),
+            fetch('https://coffee-shop-api.azurewebsites.net/api/v1/category/products')
         ])
             .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
             .then(([data1, data2]) => this.setState({
