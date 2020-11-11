@@ -6,7 +6,6 @@ import Order from './pages/Order';
 import Product from './pages/Product';
 import ProductDetail from './pages/ProductDetail';
 import Blog from './components/Blog'
-import News from './pages/News';
 import Home from './pages/Home';
 import AboutCoffee from './pages/AboutCoffee';
 import Login from './pages/Login';
@@ -23,9 +22,6 @@ const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <News />
-    </Provider>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
