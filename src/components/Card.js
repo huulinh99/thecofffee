@@ -13,14 +13,14 @@ class CardOrder extends React.Component {
                 {this.props.productForOrder.length == 0 ? (<div>
                     <Button type="primary" block style={{ marginTop: '30px', fontWeight: 'bold', backgroundColor: '#ea8025', color: '#fff', border: '1px solid transparent', paddingTop: '15px', paddingBottom: '37px' }}>
                         <Link to='/ViewCard' target='_blank'>
-                            XEM GIỎ HÀNG
+                            VIEW CART
                         </Link>
                     </Button>
                 </div>) : (
                         <div>
                             <Button type="primary" block style={{ marginTop: '30px', fontWeight: 'bold', backgroundColor: '#ea8025', color: '#fff', border: '1px solid transparent', paddingTop: '15px', paddingBottom: '37px' }}>
                                 <Link to='/ViewCard' target='_blank'>
-                                    XEM GIỎ HÀNG
+                                    VIEW CART
                                 </Link>
                             </Button>
                             {this.renderCard()}
