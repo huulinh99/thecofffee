@@ -52,6 +52,7 @@ class ViewCard extends React.Component {
     let total = getTotalAmount(cart.productForOrder);
     let requestBody = {
       ...userInfo,
+      username: userInfo.name,
       orderDetail: cart.productForOrder,
       total,
     };
