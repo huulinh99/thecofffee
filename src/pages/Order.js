@@ -127,7 +127,7 @@ class Order extends React.Component {
           onCancel={() => this.setModal1ForCancel(false)}
         >
           {this.state.loading || !this.state.currentProduct ? (
-            <div>loading...</div>
+            <div>loading....</div>
           ) : (
             <div>
               <img
