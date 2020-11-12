@@ -28,27 +28,27 @@ class CardOrder extends React.Component {
             </Button>
           </div>
         ) : (
-          <div>
-            <Button
-              type="primary"
-              block
-              style={{
-                marginTop: "30px",
-                fontWeight: "bold",
-                backgroundColor: "#ea8025",
-                color: "#fff",
-                border: "1px solid transparent",
-                paddingTop: "15px",
-                paddingBottom: "37px",
-              }}
-            >
-              <Link to="/ViewCard" target="_blank">
-                VIEW CART
+            <div>
+              <Button
+                type="primary"
+                block
+                style={{
+                  marginTop: "30px",
+                  fontWeight: "bold",
+                  backgroundColor: "#ea8025",
+                  color: "#fff",
+                  border: "1px solid transparent",
+                  paddingTop: "15px",
+                  paddingBottom: "37px",
+                }}
+              >
+                <Link to="/ViewCard" target="_blank">
+                  VIEW CART
               </Link>
-            </Button>
-            {this.renderCard()}
-          </div>
-        )}
+              </Button>
+              {this.renderCard()}
+            </div>
+          )}
         <div style={{ marginTop: "30px" }}>
           <p
             style={{ marginTop: "0px", display: "inline", marginLeft: "30px" }}

@@ -73,7 +73,6 @@ class Order extends React.Component {
     let isExist = this.state.productForOrder.some((prod) => {
       return prod.productId == this.state.currentProduct.productId;
     });
-    debugger;
     const newProductFOrORder = this.state.productForOrder.map((product, i) => {
       if (product.productId == this.state.currentProduct.productId) {
         product.quantity = +this.state.quantity;
@@ -105,7 +104,6 @@ class Order extends React.Component {
 
   handleDelete(deleteProd) {
     // edit total
-    debugger;
     let newTotal = this.state.total - deleteProd.quantity * deleteProd.price;
     // edit product for order
     let newProducts = this.state.productForOrder.filter((product) => {
