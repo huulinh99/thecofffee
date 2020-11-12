@@ -42,7 +42,7 @@ const Login = ({ history }) => {
                         "USER",
                         JSON.stringify(response.data)
                       );
-                      return history.push("/ViewCard");
+                      return history.push("/ViewCart");
                     }
                   })
                   .catch(function (error) {
