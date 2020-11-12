@@ -49,11 +49,10 @@ class ViewCard extends React.Component {
 
     console.log("Success:", userInfo);
     let cart = await JSON.parse(localStorage.getItem("CART"));
-    debugger;
     let total = getTotalAmount(cart.productForOrder);
     let requestBody = {
       ...userInfo,
-      productForOrder: cart.productForOrder,
+      orderDetail: cart.productForOrder,
       total,
     };
     console.log("requestBody", requestBody);
