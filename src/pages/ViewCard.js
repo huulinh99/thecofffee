@@ -59,7 +59,12 @@ class ViewCard extends React.Component {
 
     Axios.post(
       "https://coffee-shop-api.azurewebsites.net/api/v1/order",
-      requestBody
+      requestBody,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     )
       .then((res) => {
         if (res.status === 201) {
