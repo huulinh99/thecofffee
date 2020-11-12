@@ -18,9 +18,9 @@
     font-family: 'Bebas Neue','Lato', "Times New Roman", serif;
     font-size: 30px;
     text-align: left;
-    margin-left: 100px;
+    margin-left: -100px;
     margin-bottom: 60px;
-    width: 45%;
+    width: 50%;
     font-weight: 500;
     color: #000;
 }
@@ -36,9 +36,9 @@
 .product-detail-short-des{
     margin-bottom: 30px;
     text-align: justify;
-    width: 50%;
+    width: 70%;
     font-family: 'Lato', "Times New Roman", serif;
-    margin-left: 100px;
+    margin-left: -100px;
     line-height: 24px;
     font-size: 18px;
 }

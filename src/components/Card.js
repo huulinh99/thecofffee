@@ -47,11 +47,11 @@ class CardOrder extends React.Component {
                         <div style={{ display: 'inline' }}>
                             <p style={{
                                 fontWeight: 'bold', fontSize: '20px', marginTop: '-26px',
-                                marginLeft: '80px', fontFamily: 'Open Sans', lineHeight: 1.5
+                                marginLeft: '20px', fontFamily: 'Open Sans', lineHeight: 1.5
                             }}>{product.name}</p>
-                            <p style={{ marginTop: '-46px', marginLeft: '345px', lineHeight: 1.5, fontSize: '16px' }}>{product.price}đ</p>
+                            <p style={{ marginTop: '-43px', marginLeft: '265px', lineHeight: 1.5, fontSize: '16px' }}>{product.price}đ</p>
                         </div>
-                        <div style={{ display: 'inline' }}>
+                        <div style={{ marginTop:'-40px' }}>
                             <CloseCircleOutlined style={{background: '#ea8025',color: '#ffffff'}}/>
                         </div>
                     </div>
