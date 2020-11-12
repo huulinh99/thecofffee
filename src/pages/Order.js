@@ -92,22 +92,38 @@ class Order extends React.Component {
     this.setState({ productForOrder: newProductFOrORder });
 
     this.state.total += this.state.currentProduct.price * this.state.quantity;
-    let totalOrder = 0;
-    debugger;
-    this.state.productForOrder.forEach((prod) => {
-      totalOrder += prod.quantity;
-    });
 
-    this.setState({ quantity: 1, totalOrder });
+    this.setState({ quantity: 1 });
     localStorage.setItem(
       "CART",
       JSON.stringify({
-        productForOrder: this.state.productForOrder,
-        total: this.state.total,
-        totalOrder: this.state.totalOrder,
+        productForOrder: newProductFOrORder,
       })
     );
     console.log(this.state.total);
+  }
+
+  handleDelete(deleteProd) {
+    // edit total
+    debugger;
+    let newTotal = this.state.total - deleteProd.quantity * deleteProd.price;
+    // edit product for order
+    let newProducts = this.state.productForOrder.filter((product) => {
+      return deleteProd.productId !== product.productId;
+    });
+
+    this.setState({
+      productForOrder: newProducts,
+      total: newTotal,
+    });
+    // edit localStorage
+    localStorage.setItem(
+      "CART",
+      JSON.stringify({
+        productForOrder: newProducts,
+        total: newTotal,
+      })
+    );
   }
 
   handleChange(event) {
@@ -203,8 +219,8 @@ class Order extends React.Component {
               }}
             >
               <CardOrder
+                onDelete={(prod) => this.handleDelete(prod)}
                 onClick={(prod) => {
-                  debugger;
                   this.setState({
                     currentProduct: prod,
                   });

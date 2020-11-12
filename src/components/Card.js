@@ -64,7 +64,7 @@ class CardOrder extends React.Component {
               display: "inline",
             }}
           >
-            {this.props.total}đ
+            {this.getTotalAmount()}đ
           </p>
         </div>
       </div>
@@ -75,6 +75,14 @@ class CardOrder extends React.Component {
     let totalOrder = 0;
     this.props.productForOrder.forEach((prod) => (totalOrder += prod.quantity));
     return totalOrder;
+  }
+
+  getTotalAmount() {
+    let totalAmount = 0;
+    this.props.productForOrder.forEach(
+      (prod) => (totalAmount += prod.quantity * prod.price)
+    );
+    return totalAmount;
   }
 
   renderCard() {
@@ -129,6 +137,9 @@ class CardOrder extends React.Component {
             </Col>
             <Col span={2}>
               <CloseCircleOutlined
+                onClick={() =>
+                  this.props.onDelete && this.props.onDelete(product)
+                }
                 style={{ background: "#ea8025", color: "#ffffff" }}
               />
             </Col>
