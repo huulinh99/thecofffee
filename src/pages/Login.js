@@ -13,31 +13,11 @@ const Login = ({ history }) => {
     const [error, setErrors] = useState("");
 
     const Auth = useContext(AuthContext);
-    const handleForm = e => {
 
-        e.preventDefault();
-        firebase
-            .auth()
-            .setPersistence(firebase.auth.Auth.Persistence.SESSION)
-            .then(() => {
-                firebase
-                    .auth()
-                    .signInWithEmailAndPassword(email, password)
-                    .then(res => {
-                        if (res.user) Auth.setLoggedIn(true);
-                        history.push('/reports')
-                    })
-                    .catch(e => {
-                        setErrors(e.message);
-                    });
-            })
-
-    };
-
-    const signInWithGoogle = () => {
+    const  signInWithGoogle = async () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         var role = '';
-        firebase
+        await firebase
             .auth()
             .setPersistence(firebase.auth.Auth.Persistence.SESSION)
             .then(() => {
@@ -49,8 +29,11 @@ const Login = ({ history }) => {
                             Axios.post('https://coffee-shop-api.azurewebsites.net/api/v1/Auth/Google', {
                                 token: idToken,
                               })
-                              .then(function (response) {                               
-                                role = response.data.role;                                                         
+                              .then(function (response) {                            
+                                if(response.data.role === "User"){
+                                    console.log("sdfgsdfsd");
+                                    return <Redirect to="/ViewCard"/>
+                                }                                                  
                               })
                               .catch(function (error) {
                                 console.log(error);
