@@ -13,26 +13,6 @@ const Login = ({ history }) => {
     const [error, setErrors] = useState("");
 
     const Auth = useContext(AuthContext);
-    const handleForm = e => {
-
-        e.preventDefault();
-        firebase
-            .auth()
-            .setPersistence(firebase.auth.Auth.Persistence.SESSION)
-            .then(() => {
-                firebase
-                    .auth()
-                    .signInWithEmailAndPassword(email, password)
-                    .then(res => {
-                        if (res.user) Auth.setLoggedIn(true);
-                        history.push('/reports')
-                    })
-                    .catch(e => {
-                        setErrors(e.message);
-                    });
-            })
-
-    };
 
     const  signInWithGoogle = async () => {
         const provider = new firebase.auth.GoogleAuthProvider();
