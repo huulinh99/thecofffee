@@ -16,7 +16,7 @@ class ProductDetail extends React.Component {
 
     async componentDidMount() {
         console.log(this.state.productId);
-        const url = `https://localhost:44362/api/v1/Products/${this.state.productId}`;
+        const url = `https://coffee-shop-api.azurewebsites.net/api/v1/Products/${this.state.productId}`;
         const respone = await fetch(url);
         const data = await respone.json();
         this.setState({
