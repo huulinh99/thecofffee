@@ -107,9 +107,7 @@ class Product extends React.Component {
                                             </Button>                
                                         </BrowserRouter>                                                                                      
                                             <Button  size='400px' className="more" style={{marginTop:'15px'}}>
-                                                <Link to='/ViewCard' target='_blank'>
                                                     see more
-                                                </Link>
                                             </Button>                                              
                                     </Card>
                                 </Col>                            
