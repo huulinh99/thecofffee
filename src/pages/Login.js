@@ -58,9 +58,9 @@ const Login = ({ history }) => {
     <div className="container">
       <div className="header">
         <Link to="/">
-          <span className="title">Capstone Scoring System</span>
+          <span className="title">The Coffee House</span>
         </Link>
-        <div className="desc">Project of SWD301</div>
+        <div className="desc">Project of Group 3</div>
       </div>
       <div className="loginContainer">
         <div style={{ marginTop: "2rem" }}>
