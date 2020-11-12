@@ -22,7 +22,7 @@ class CardOrder extends React.Component {
                 paddingBottom: "37px",
               }}
             >
-              <Link to="/ViewCard" target="_blank">
+              <Link to="/ViewCart" target="_blank">
                 VIEW CART
               </Link>
             </Button>
@@ -42,7 +42,7 @@ class CardOrder extends React.Component {
                   paddingBottom: "37px",
                 }}
               >
-                <Link to="/ViewCard" target="_blank">
+                <Link to="/ViewCart" target="_blank">
                   VIEW CART
               </Link>
               </Button>

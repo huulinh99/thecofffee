@@ -3,7 +3,7 @@ import { Layout, Menu, Modal, Button, Spin, message, notification } from "antd";
 import { Row, Col, Card } from "antd";
 import { Form, Input, Checkbox } from "antd";
 import CardOrder from "../components/Card";
-import "../stylesheet/ViewCard.css";
+import "../stylesheet/ViewCart.css";
 import Navbar from "../components/Navbar";
 import Axios from "axios";
 
@@ -14,7 +14,7 @@ const getTotalAmount = (productForOrder) => {
   );
   return totalAmount;
 };
-class ViewCard extends React.Component {
+class ViewCart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -213,4 +213,4 @@ class ViewCard extends React.Component {
   }
 }
 
-export default ViewCard;
+export default ViewCart;

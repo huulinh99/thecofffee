@@ -7,7 +7,7 @@ import AboutCoffee from './pages/AboutCoffee';
 import Product from './pages/Product';
 import Login from './pages/Login';
 import Order from './pages/Order';
-import ViewCard from './pages/ViewCard';
+import ViewCart from './pages/ViewCart';
 import firebase from 'firebase';
 import firebaseConfig from "./services/firebase.config";
 import ProductDetail from './pages/ProductDetail';
@@ -25,7 +25,7 @@ function App() {
         <Route path="/AboutCoffee" component={AboutCoffee}/>
         <Route path="/Product" component={Product}/>
         <Route path="/Order" component={Order}/>
-        <Route path="/ViewCard" component={ViewCard}/>
+        <Route path="/ViewCart" component={ViewCart}/>
         <Route path="/Login" component={Login}/>
         <Route path='/products/:productId' render={(props) => {
                     return ( <ProductDetail {...props } /> )
